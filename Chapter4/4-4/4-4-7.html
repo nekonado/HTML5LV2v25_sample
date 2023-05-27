@@ -1,0 +1,23 @@
+﻿<html>
+
+<head>
+    <script>
+
+        async function f() {
+            let process = await new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    resolve();
+                    console.log("promise resolved") //･････3秒後に表示される
+                }, 3000);
+            });
+            console.log("finished"); //･･････････････････promise resolvedのすぐあとに表示される
+        };
+        f();
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

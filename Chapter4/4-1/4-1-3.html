@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+
+<body>
+    <canvas id="board" width="640" height="600"></canvas>
+</body>
+
+<script>
+    let canvas = document.getElementById('board');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    };
+    ctx.font = '20px sans-serif';
+    ctx.shadowColor = '#BBBBBB'; //･････影の色
+    ctx.shadowBlur = 1; //･････････････････影のぼかし
+    ctx.shadowOffsetX = 3; //･････････････影をx軸にずらす
+    ctx.shadowOffsetY = 1; //･････････････影をy軸にずらす
+    ctx.fillText('Text', 0, 30);
+
+</script>
+</head>
+
+<body>
+    <div id="#"></div>
+</body>

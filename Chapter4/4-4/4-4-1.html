@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        let socket = new WebSocket('ws://game.example.com:12010/updates');
+                socket.onopen = function () {
+            setInterval(function () {
+                if (socket.bufferedAmount == 0)
+                    socket.send(getUpdateData());
+            }, 50);
+        };
+
+    </script>
+    </body>
+
+</html>

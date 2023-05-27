@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+
+const x = "global x";
+const y = "global y";
+
+  function foo() {
+    const y = "local y";
+    console.log(x);  //global x
+    console.log(y);  //locay y
+
+    if(y){
+      const y = "local y2";  //local y2
+      console.log(y);
+     }
+  }
+
+foo()
+
+</script>
+</head>
+<body>
+<div id="#"></div>
+</body>

@@ -1,0 +1,17 @@
+﻿<html>
+
+<head>
+    <script type="text/javascript">
+        function onLoad() {
+            let now = new Date().getTime();
+            let page_load_time = now - performance.timing.navigationStart;
+            alert("User-perceived page loading time: " + page_load_time);
+        }
+    </script>
+</head>
+
+<body onload="onLoad()">
+    <!- Main page body goes from here. -->
+</body>
+
+</html>

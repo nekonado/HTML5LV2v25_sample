@@ -1,0 +1,26 @@
+﻿<html>
+
+<head>
+    <script type="text/javascript">
+        window.onload = function () {
+            function* func() {
+                console.log("process 1");
+                yield 1;
+                console.log("process 2");
+                yield 2;
+                console.log("process 3");
+                return 3;
+            }
+            let f = func();
+            f.next();
+            f.next();
+            f.next();
+        };
+    </script>
+</head>
+
+<body>
+    サンプルコードにおけるconsole.log()の出力
+</body>
+
+</html>

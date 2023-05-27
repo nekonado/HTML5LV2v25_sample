@@ -1,0 +1,20 @@
+﻿<html>
+<head>
+<script>
+window.onload = function() {
+let disp = document.getElementsByTagName('p').item(0);
+let intervalTimer = window.setInterval(
+// 1000msごとに実行される無名関数を定義
+function() {
+let currentDate = new Date(); //･･･Dateインスタンスを生成
+// ロケールに合わせた現在時刻を表示
+disp.innerHTML = currentDate.toLocaleTimeString();
+}
+, 1000 //･･･････関数実行間隔設定(単位はms)
+);
+};
+</script>
+</head>
+<body>
+<p>LocaleTime表示域</p>
+</body>

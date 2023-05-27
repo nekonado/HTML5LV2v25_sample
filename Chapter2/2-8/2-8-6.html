@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <script type="text/javascript">
+    let str = "This is Japan.";
+    let regexp1 = new RegExp("japan", "i"); //･･･正規表現オブジェクト
+    //※第2パラメータに大文字 / 小文字を区別しないフラグ指定
+    let regexp2 = new RegExp("japan"); //･････････正規表現オブジェクト
+    console.log(str.match(regexp1)); //･･･････････結果：["Japan"]
+    console.log(str.match(regexp2)); //･･････････結果：null
+  </script>
+</head>
+
+<body>
+  <div id="#"></div>
+</body>

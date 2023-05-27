@@ -1,0 +1,22 @@
+﻿<html>
+
+<head>
+
+    <script>
+        console.log(0xff & 0x0f); //････結果：15(0x0f)　※AND
+        console.log(0xf0 | 0x0f); //････結果：255(0xff)　※OR
+        console.log(0xf0 ^ 0x0f); //････結果：255(0xff)　※XOR
+        console.log(~0x0000ffff); //････結果：-65536(0xffff0000)　※NOT
+        console.log(0x08 << 2); //･･･････結果：32（0x20）　※左シフト
+        console.log(0x08 >> 2); //･･･････結果：2（0x02）　※右シフト
+        console.log(-15 >>> 2); //･･･････結果：1073741820　※符号なし右シフト
+        console.log(-15 >> 2); //････････結果：-4　※右シフト
+    </script>
+
+
+</head>
+
+<body>
+</body>
+
+</html>

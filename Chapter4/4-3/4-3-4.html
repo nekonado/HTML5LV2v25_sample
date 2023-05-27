@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        let buffer = new ArrayBuffer(2);
+        let dataview = new DataView(buffer);
+        // リトルエンディアンで設定（3番目のパラメータにtrueを設定）
+        dataview.setUint16(0, 0x1234, true);
+        // ビッグエンディアンで読み込み（2番目のパラメータを省略）
+        console.log(dataview.getUint16(0).toString(16)); // "3412"
+        // リトルエンディアンで読み込み（2番目のパラメータにtrueを設定）
+        console.log(dataview.getUint16(0, true).toString(16)); // "1234"
+
+    </script>
+
+
+    </body>
+
+</html>

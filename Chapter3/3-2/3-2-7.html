@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sample create attribute </title>
+    <script>
+        // div要素の子であるp要素すべてにstyle属性を追加
+        function createAttr() {
+            // div要素のリストを取得
+            let divs = document.getElementsByTagName('div');
+            // div要素のリストの中から最初のdiv要素を取得
+            let div = divs.item(0);
+            // div要素の中の最初の子供の要素を取得
+            let child = div.firstChild;
+            while (child) {
+                // 追加する属性 style = "background-color:#cf6;width:300px;"を生成
+                let attrStyle = document.createAttribute('style');
+                attrStyle.nodeValue = 'background-color:#cf6;width:300px;'
+                // p要素の場合、属性を追加
+                if (child.nodeType == 1) {
+                    child.setAttributeNode(attrStyle);
+                }
+                // 次の子供を取得
+                child = child.nextSibling;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>1-1</p>
+        <p>1-2</p>
+        <p>1-3</p>
+    </div>
+    <button onclick="createAttr();">create attribute</button>
+</body>
+
+</html>

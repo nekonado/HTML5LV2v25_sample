@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <script type="text/javascript">
+    with (Math) {
+      console.log(sin(30 / 180 * PI));  //････････････結果：0.5 (30度)
+      console.log(asin(0.5) * 180 / PI);  //･･････････結果：30度
+      console.log(cos(60 / 180 * PI));  //････････････結果：0.5 (60度)
+      console.log(acos(0.5) * 180 / PI);  //･････････結果：60度
+      console.log(tan(45 / 180 * PI));  //････････････結果：1 (45度)
+      console.log(atan(1) * 180 / PI);  //････････････結果：45度
+      console.log(atan2(1, sqrt(3)) * 180 / PI);  //･･･････････結果：座標(sqrt(3),1)は30度
+      console.log(log(exp(2)));  //･･････････結果：2
+      console.log(abs(-123));  //･････････････結果：123
+      console.log(abs(123));  //･････････････結果：123
+      console.log(ceil(3.1));  //･････････････結果：4
+      console.log(ceil(-3.1));  //･･･････････結果：-3
+      console.log(floor(3.1));  //･･･････････結果：3
+      console.log(floor(-3.1));  //･･････････結果：-4
+      console.log(pow(2, 3));  //･････････････結果：8 (= 2*2*2)
+      console.log(pow(2, -3));  //･････････････結果：0.125(= 1/2^0*1/2^1*1/2^2)
+      console.log(imul(10, 10));  //･･････････結果：100
+      console.log(imul(0x80000000, 1));  //･･･････････結果：-2147483648
+      console.log(round(1.4));  //･･･････････結果：1
+      console.log(round(1.5));  //･･･････････結果：2
+      console.log(round(-1.4));  //･･････････結果：-1
+      console.log(round(-1.5));  //･･････････結果：-1 負の場合は切り捨て
+      console.log(random());  //･････････････結果：0.6013287487439811　※乱数なので毎回変化
+    }
+  </script>
+</head>
+
+<body>
+  <div id="#"></div>
+</body>

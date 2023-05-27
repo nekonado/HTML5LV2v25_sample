@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script type="text/javascript">
+
+        function handleVisibilityChange() {
+            if (document.hidden) {
+                console.log("pause");
+            } else {
+                console.log("start");
+            }
+        }
+        document.addEventListener("visibilitychange", handleVisibilityChange, false);
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

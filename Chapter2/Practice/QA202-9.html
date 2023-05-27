@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <script type="text/javascript">
+
+    const global = "INIT BEGIN";
+    console.log(global);// INIT BEGIN
+
+    foo();
+    console.log(global);// INIT BEGIN
+
+    function foo() {
+      const global = "IMMEDIATE BEGIN";
+      console.log(global); // IMMEDIATE BEGIN
+      bar();
+      function bar() {
+        console.log(global); // IMMEDIATE BEGIN
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <div id="#"></div>
+</body>

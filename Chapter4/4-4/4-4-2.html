@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        // WebSocketオブジェクトの生成(WebSocketサーバーのURLを指定)
+        let ws;
+        ws = new WebSocket(url);
+        // コネクションオープン時のコールバック関数登録
+        ws.onopen = function () {
+            console.log("コネクションオープン");
+        }
+        // エラー発生時のコールバック関数登録
+        ws.onerror = function (error) {
+            console.log("エラー発生:" + error);
+        }
+
+        // コネクションクローズ時のコールバック関数登録
+        ws.onclose = function (event) {
+            // 切断が完全に完了したかどうか
+            if (event.wasClean) {
+                let closed = "完了";
+            } else {
+                let closed = "未完了";
+            }
+            console.log("切断処理：" + closed);
+            console.log("コード：" + event.code);
+            console.log("理由：" + event.reason);
+        }
+        // メッセージ受信時のコールバック関数登録
+        ws.onmessage = function (evt) {
+            console.log("受信メッセージ:" + evt.data);
+        }
+        // メッセージ送信
+        function Send(message) {
+            ws.send(message.value);
+            console.log("送信メッセージ:" + message.value);
+        }
+        // 終了時に明示的に接続を閉じる
+        window.onunload = function () {
+            let code = 4000;
+            let reason = "クライアントが閉じられました。";
+            ws.close(code, reason);
+        }
+    </script>
+
+
+    </body>
+
+</html>

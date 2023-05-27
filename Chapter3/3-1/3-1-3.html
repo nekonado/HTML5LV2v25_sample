@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>bubbling event </title>
+    <script>
+        // HTMLが読み込まれる時にイベントリスナを登録
+        window.onload = function () {
+            // level1の要素のイベントリスナを定義
+            document.getElementById('level1').addEventListener('click', function () {
+                alert('listener at level1')
+            }, false);
+            // level2-1の要素のイベントリスナを定義
+            document.getElementById('level2-1').addEventListener('click', function () {
+                alert('listener at level2-1')
+            }, false);
+            // level2-2の要素のイベントリスナを定義
+            document.getElementById('level2-2').addEventListener('click', function () {
+                alert('listener at level2-2')
+            }, false);
+        }
+    </script>
+</head>
+
+<body>
+    <div id='level1'>
+        click at level1
+        <div id='level2-1'>
+            click at level2-1
+        </div>
+        <div id='level2-2'>
+            click at level2-2
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+﻿<html>
+
+<head>
+  <script>
+    class Human {
+      constructor(name, age) {//･･････constructorでプロパティやメソッドを定義
+        this.name = name;
+        this.age = age;
+        this.talkHello = function () {
+          return ("My Name is " + this.name + "." + this.age + " years old.");
+        };
+      };
+    };
+
+    let mike = new Human("Mike", 16);
+    console.log(mike.name); ////･･････････････結果："Mike"
+    console.log(mike.talkHello()); ////･･･････結果："My Name is Mike.16 years old."
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

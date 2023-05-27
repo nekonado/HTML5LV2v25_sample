@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script type="text/javascript">
+
+        let i = 0;
+        try {
+            if (i === 0) {
+                throw "iが0!";
+            }
+        } catch (e) { ////････････････････････throwされた値が変数eに格納される
+            console.log(e); ////･･････････････結果："iが0!"　※throwされた値を表示
+        } finally {
+            console.log("終了処理"); //･････結果："終了処理"
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="#"></div>
+</body>

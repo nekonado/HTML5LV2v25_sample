@@ -1,0 +1,28 @@
+let result = 0;
+
+result += 1;
+result += 2;
+result += 3;
+result += 4;
+result += 5;
+result += 6;
+result += 7;
+result += 8;
+result += 9;
+result += 10;
+
+console.log(result);
+
+
+// let result = 0;
+// for (let i = 1; i <= 10; i++) {
+//     result += i;
+// }
+// console.log(result);
+
+
+// let result = 0;
+// for (let i = 1; i <= 1000; i++) {
+//     result += i;
+// }
+// console.log(result);

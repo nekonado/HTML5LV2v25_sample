@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script type="text/javascript">
+
+        let a = "global value"; ////･･･････グローバル変数宣言
+        function f1() {
+            let a = "local value"; //･･････ブロック内変数宣言
+            return a;
+        }
+        function f2() {
+            a = "value changed"; ////････････letやvar、const省略のグローバル変数
+        }
+        console.log(a); ////･･･････････････結果："global value" 
+        console.log(f1()); ////･････････････結果："local value" 
+        console.log(a); ////････････････････結果："global value" 
+        f2();
+        console.log(a); ////･･･････････････結果："value changed" 
+    </script>
+</head>
+
+<body>
+    <div id="#"></div>
+</body>

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Custom event </title>
+    <script>
+        window.onload = function () {
+            // イベントリスナの登録
+            document.getElementById("level1").addEventListener('click', function () {
+                alert('click!');
+            }, false);
+            // イベントオブジェクトの生成
+            let customEvent = new Event('click');
+            // イベント発生
+            document.getElementById("level1").dispatchEvent(customEvent);
+        }
+    </script>
+</head>
+
+<body>
+    <div id='level1'>
+        click at level1
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script type="text/javascript">
+
+        //console.log(x - 0); //･･････････････結果：not defined　※xは未定義の変数
+        console.log(null - 0); //････････････結果：0(Null値型)
+        console.log(true - 0); //････････････結果：1(論理型)
+        console.log(false - 0); //･････････結果：0(論理型)
+        console.log(123 - 0); //･･････････････結果：123(数値型)
+        console.log("aaa" - 0); //････････････結果：NaN(文字列型(非数値))
+        console.log("123" - 0); //････････････結果：123(文字列型(10進数))
+        console.log("0xffff" - 0); //････････結果：65535(文字列型(16進数))
+
+    </script>
+</head>
+
+<body>
+    <div id="#"></div>
+</body>

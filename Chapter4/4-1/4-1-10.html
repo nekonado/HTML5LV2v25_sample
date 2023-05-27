@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+
+<body>
+    <canvas id="board" width="640" height="600"></canvas>
+    <img id="image">
+</body>
+<script>
+    let canvas = document.getElementById('board');
+    if (canvas.getContext) {
+        ctx = canvas.getContext('2d');
+    };
+
+    let img = new Image();
+    img.src = 'canvas-sample.jpg'
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0);
+        // 追加部分
+        setTimeout(function () {
+            // 改めて画像として取得
+            let newImg = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            let data = newImg.data;
+            // グレースケール化
+            for (let i = 0, l = data.length; i < l; i += 4) {
+                let color = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                data[i] = color;
+                data[i + 1] = color;
+                data[i + 2] = color;
+            }
+            // Canvas上に描画
+            ctx.putImageData(newImg, 0, 0);
+        }, 3000)
+    }
+
+
+</script>
+
+</html>

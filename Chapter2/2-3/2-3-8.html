@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        let Human = function (name, age) {
+            this.name = name; ////･･･････プロパティ(名前)
+            this.age = age; ////････････プロパティ(年齢)
+            this.talkHello = function () { ////････････メソッド(自己紹介する)
+                return ("My Name is " + name + "." + this.age + " years old.");
+            }
+        }
+        let mike = new Human('Mike', 16);
+        console.log(mike.name); ////･････････････････結果："Mike"　※.演算子によるプロパティアクセス
+        console.log(mike['name']); ////･････････････結果："Mike"　※[]演算子によるプロパティアクセス
+        console.log(mike.talkHello()); ////････････結果："My Name is Mike.16 years old."
+        //※.演算子によるメソッドアクセス
+        console.log(mike['talkHello']());
+
+
+
+    </script>
+</head>
+
+<body>
+    <div id="#"></div>
+</body>

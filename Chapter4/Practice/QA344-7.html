@@ -1,0 +1,19 @@
+﻿<html>
+
+<body>
+    <canvas id="myCanvas" width="640" height="600"></canvas>
+</body>
+
+<script>
+    let count = 0;
+    function render() {
+        console.log(count++);
+        requestAnimationFrame(render);
+    }
+    render();
+</script>
+
+
+
+
+</html>

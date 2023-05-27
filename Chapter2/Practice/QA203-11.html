@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        function closure() {
+            let a = 0;
+            let func = function () {
+                console.log(a++);
+            }
+            func();
+            func();
+        }
+        closure()
+
+    </script>
+</head>
+
+<body>
+    <div id="#"></div>
+</body>

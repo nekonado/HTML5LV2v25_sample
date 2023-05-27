@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset=utf-8>
+    <title>ドラッグ＆ドロップのサンプル</title>
+    <script>
+        function dragHandler(event) { //･･････････ドラッグ時の処理
+            // 動作結果表示用のオブジェクトを取得
+            let pElement = document.getElementById("disp");
+            // ドラッグするデータの識別子をDataTransferオブジェクトにセット
+            event.dataTransfer.setData("text", "COIN");
+            // 動作結果を表示
+            pElement.innerHTML = "dragged !";
+        }
+        function dropHandler(event) { //･･･････････ドロップ時の処理
+            // 動作結果表示用のオブジェクトを取得
+            let pElement = document.getElementById("disp");
+            // ドロップされたデータの識別子("COIN")を取得
+            id = event.dataTransfer.getData('text');
+            // 動作結果表示
+            pElement.innerHTML = id + " dropped !";
+            // イベントをキャンセル
+            event.preventDefault();
+        }
+    </script>
+</head>
+
+<body>
+    <!-- ドラッグ元のフォームにドラッグに対する処理を定義 -->
+    <div id="from" draggable="true" ondragstart="dragHandler(event);">
+        <p>【COIN】</p>
+    </div>
+    <p>
+        <!-- ドラッグ先のフォームにドラッグに対する処理を定義 -->
+    <div id="to" ondragover="event.preventDefault();" ondrop="dropHandler(event);">
+        <p>■BOX■</p>
+    </div>
+    <p id="disp"> status </p>
+</body>
+
+</html>

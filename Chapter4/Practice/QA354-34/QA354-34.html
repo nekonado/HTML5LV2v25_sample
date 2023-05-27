@@ -1,0 +1,20 @@
+﻿<html>
+
+<script>
+    let count = 3;
+    let worker = new Worker("worker.js");
+    worker.onmessage = function (event) {
+        count++;
+        worker.postMessage(count);
+    }
+    worker.onerror = function (event) {
+        console.log("onerror");
+    }
+    worker.postMessage(count);
+</script>
+
+
+
+</body>
+
+</html>

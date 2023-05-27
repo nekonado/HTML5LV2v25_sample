@@ -1,0 +1,24 @@
+﻿<html>
+
+<head>
+    <script>
+        // メッセージ受信イベントに対応したリスナreceiveMessageを登録
+        let event = window.addEventListener("message", receiveMessage, false);
+        // リスナの定義
+        function receiveMessage(event) {
+            // originのチェック
+            // if (event.orgin !== "http://foo.bar:8080") {
+            // alert("not origin!");
+            // return;
+            // }
+            console.log("メッセージが来ました ＞");
+            console.log(event.data);
+        }
+    </script>
+</head>
+
+<body>
+    <p>メッセージを待っています。</p>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        function processData(data) {
+            // 受信したデータの中身の処理(割愛)
+        }
+        function handler() {
+            if (this.readyState == this.DONE) {
+                if (this.status == 200 &&
+                    this.responseXML != null &&
+                    this.responseXML.getElementById('test').textContent) {
+                    // readyStateがDONE(転送完了)でstatusが200(成功)でresponseXMLが
+                    // nullでなく、responseXMLの中にtestという名の要素を含み、そのテキスト表現が
+                    // nullでない場合に成功とみなす。
+                    processData(this.responseXML.getElementById('test').textContent);
+                    return;
+                    // responseXMLの中のtest要素のテキスト表現を引数にprocessData関数を呼び出し、関数をreturnする。
+                }
+                // something went wrong
+                // このルートに入っている場合には処理結果が異常となっている
+                processData(null);
+                // processData関数は引数をnullとして呼び出す。
+            }
+        }
+
+    </script>
+
+
+    </body>
+
+</html>

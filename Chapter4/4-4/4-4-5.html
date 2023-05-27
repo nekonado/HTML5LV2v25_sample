@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        function fetchStatus(address) {
+            let client = new XMLHttpRequest();
+            client.onreadystatechange = function () {
+                if (this.readyState == this.DONE) returnStatus(this.status);
+            };
+            client.open("HEAD", address);
+            client.send();
+        }
+    </script>
+
+
+    </body>
+
+</html>

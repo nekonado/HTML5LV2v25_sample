@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script type="text/javascript">
+
+        let a = ["foo", "bar", "hoge"]; //･･･････オブジェクト型の宣言
+        //･････････変数aにはオブジェクトの位置が入る
+        console.log(typeof (a)); //････････････････結果："object"
+        console.log(a[0]); //･･････････････････････結果："foo"
+        let b = a; //･････････････････････････････････オブジェクト型変数の代入
+        //※変数bには上記で宣言したオブジェクトの位置が入る
+        console.log(typeof (b)); //････････････････結果："object"
+        console.log(b[0]); //･････････････････････結果："foo"
+        a[0] = 'xxx'; //･･･････････････････････････････････オブジェクトの内容の変更
+        console.log(a[0]); //･･････････････････････結果："xxx"
+        console.log(b[0]); //･･････････････････････結果："xxx" ※a[0]に設定した値が表示される
+
+    </script>
+</head>
+
+<body>
+    <div id="#"></div>
+</body>

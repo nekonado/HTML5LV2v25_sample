@@ -1,0 +1,32 @@
+﻿<html>
+
+<script>
+    function indexDataBase() {
+        let indexedDB = window.indexedDB,
+            request = null,
+            db = null,
+            store = null,
+            transaction = null;
+        request = indexedDB.open("books", 1);
+        request.onupgradeneeded = function () {
+            db = request.result;
+            store = db.createObjectStore("book", { keyPath: "isbn" });
+            titleIndex = store.createIndex("by_title", "title", { unique: false });
+            authorIndex = store.createIndex("by_author", "author");
+            store.put({ title: "Quarry Memories", author: "Fred", isbn: 123456 });
+        }
+        request.onsuccess = function () {
+            db = request.result;
+            transaction = db.transaction("book", "readwrite");
+            store = transaction.objectStore("book");
+            store.put({ title: "Quarry Memories", author: "Fred", isbn: 234567 });
+        }
+    }
+
+</script>
+
+
+
+</body>
+
+</html>

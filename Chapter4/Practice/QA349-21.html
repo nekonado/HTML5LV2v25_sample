@@ -1,0 +1,39 @@
+﻿<html>
+
+<body>
+    <input type="file" id="readfile" />
+    <input type="button" value="読み込み" onClick="readTextFile();" />
+    <h3>画像ファイルのサムネイル</h3>
+    <div>
+        <img id="thumbnail" width="200" height="200" style="border-style:inset;" />
+    </div>
+    <script>
+        function readTextFile() {
+            let file = document.getElementById("readfile").files[0];
+            let reader = new FileReader();
+            reader.onloadstart = function () {
+                console.log("onloadstart");
+            }
+            reader.onprogress = function () {
+                console.log("onprogress");
+            }
+            reader.onerror = function () {
+                console.log("onerror");
+            }
+            reader.onloadend = function () {
+                console.log("onloadend");
+            }
+            reader.onload = function () {
+                var res = reader.result;
+                document.getElementById("thumbnail").src = res;
+            }
+            reader.readAsDataURL(file);
+        }
+    </script>
+
+
+
+    </script>
+</body>
+
+</html>

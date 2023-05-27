@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>sample getElementById() </title>
+    <script>
+        function changeText(newText) {
+            // id = "p1"の要素を取得
+            let p1Element = document.getElementById("p1");
+            // 要素のテキストノードの書き換え
+            p1Element.innerHTML = newText;
+        }
+    </script>
+</head>
+
+<body>
+    <p id="p1">(state)</p>
+    <button onclick="changeText('ON');">ON</button>
+    <button onclick="changeText('OFF');">OFF</button>
+</body>
+
+</html>

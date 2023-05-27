@@ -1,0 +1,5 @@
+﻿applicationCache.onupdateready = function (e) {
+if (confirm("update ?")) {
+location.reload();
+}
+}

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sample delete attribute </title>
+    <script>
+        // div要素の子であるpタグすべてにstyle属性を追加
+        function deleteAttr() {
+            // div要素のリストを取得
+            let divs = document.getElementsByTagName('div');
+            // div要素のリストの中から最初のdiv要素を取得
+            let div = divs.item(0);
+            // div要素の中の最初の子供の要素を取得
+            let child = div.firstChild;
+            while (child) {
+                // style属性がある場合、style属性を削除
+                if (child.nodeType == 1 && child.hasAttribute('style')) {
+                    child.removeAttribute('style');
+                }
+                // 次の子供を取得
+                child = child.nextSibling;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>1-1</p>
+        <p style="background-color:yellow;width:50px;">1-2</p>
+        <p>1-3</p>
+    </div>
+    <button onclick="deleteAttr();">delete attribute</button>
+</body>
+
+</html>

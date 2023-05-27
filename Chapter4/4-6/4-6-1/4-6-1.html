@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script type="text/javascript">
+        let worker = new Worker("test.js");
+        worker.onmessage = function (event) {
+            let message = event.data;
+            document.getElementById("output").innerHTML = message;
+        };
+        function clickbtn() { //ボタンをクリックした際の処理
+            worker.postMessage("test");
+        };
+    </script>
+</head>
+
+<body>
+    <input type="button" onClick="clickbtn()" value="クリック">
+    <div id="output"></div>
+</body>
+
+</html>

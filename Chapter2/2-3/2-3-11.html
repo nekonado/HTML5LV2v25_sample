@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script type="text/javascript">
+
+        // ジェネレータ関数
+        function* generatorFunc() {
+            //処理1
+            yield;
+            //処理2
+            yield;
+            //処理3
+            yield;
+        }
+        let x = generatorFunc(); //････処理は実行されずオブジェクト(イテレータ)が返されるのみ
+        //処理を実行するにはnext()を呼ぶ
+        x.next(); //････････処理1のみ実行し、最初のyieldの箇所で処理が戻る
+        x.next(); //････････処理2のみ実行し、2番目のyieldの箇所で処理が戻る
+        x.next(); //････････処理3のみ実行し、3番目のyieldの箇所で処理が戻る
+
+    </script>
+</head>
+
+<body>
+    <div id="#"></div>
+</body>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        // 現在位置を取得
+        function getCurrentPos() {
+            navigator.geolocation.getCurrentPosition(
+                okCallback,
+                ngCallback,
+                {
+                    enableHighAccuracy: true,
+                    maximumAge: 0,
+                    timeout: 1000
+                });
+        }
+        // 取得成功時のコールバック関数
+        function okCallback(pos) {
+            // 緯度の取得
+            let currentLatitude = pos.coords.latitude;
+            // 経度の取得
+            let currentLongitude = pos.coords.longitude;
+            // 画面に表示
+            document.getElementById("lati").innerHTML = currentLatitude;
+            document.getElementById("longi").innerHTML = currentLongitude;
+        }
+        // 失敗時のコールバック関数
+        function ngCallback(er) {
+            // TODO: エラー時処理
+        }
+        // 画面表示時の処理
+        window.onload = function () {
+            getCurrentPos();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Geolocation</h1>
+    緯度<div id="lati"></div><br>
+    経度<div id="longi"></div><br>
+    <div id="map_canvas" style="width:500px; height:300px"></div>
+</body>

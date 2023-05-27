@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script type="text/javascript">
+
+        let c = 0;
+        // 1~12月分のループ処理
+        for (let month = 1; month <= 12; month++) {
+            // 6~8月は加算処理をスキップ
+            if (month >= 6 && month <= 8) continue;
+            c++;
+        }
+        console.log(c);// ･･････結果：9
+
+
+    </script>
+</head>
+
+<body>
+    <div id="#"></div>
+</body>

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+
+<body>
+    <video id="video" width="400" height="300" autoplay>
+        <source src="sample.mp4">
+        <source src="sample.ogv">
+        <source src="sample.webm">
+    </video>
+    <button id="btn">画像生成</button>
+    <canvas id="canvas" width="400" height="300"></canvas>
+</body>
+<script>
+    let video = document.getElementById('video');
+    let canvas = document.getElementById('canvas');
+    let button = document.getElementById('btn');
+    button.addEventListener('click', function () {
+        // canvasにvideoの画像を描画
+        canvas.getContext("2d").drawImage(video, 0, 0, 400, 300);
+    });
+</script>
+
+</html>

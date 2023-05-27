@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <script type="text/javascript">
+    console.log(eval("123" == 123)); //･････結果：true
+    console.log(isFinite(Infinity)); //･･････結果：false
+    console.log(isFinite(123)); //･･･････････結果：true
+    console.log(isNaN(123)); //････････････････結果：false
+    console.log(isNaN(NaN)); //････････････････結果：true
+    // 第2パラメータ（基数）省略
+    console.log(parseInt("0xff")); //････････結果：255 "0x"が先頭なので16進数
+    console.log(parseInt("123")); //･････････結果：123 "0x"以外なので10進数
+    // 第2パラメータ指定
+    console.log(parseInt("11", 2)); //････････結果：3 2進数
+    console.log(parseInt("11", 10)); //･･･････結果：11 10進数
+    console.log(parseInt("11", 16)); //･･･････結果：17 16進数
+
+  </script>
+</head>
+
+<body>
+  <div id="#"></div>
+</body>

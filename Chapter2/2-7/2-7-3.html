@@ -1,0 +1,15 @@
+﻿<html>
+
+<head>
+  <script>
+    let adder = "return x + y;"; //･･････処理の定義
+    let adderObj = new Function("x", "y", adder); //･････Functionコンストラクタによる定義
+    console.log(adderObj(2, 3)); //･････結果：5　※ここで関数が実行される
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+﻿<html>
+
+<head>
+    <style>
+        p.sample {
+            color: blue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let p = document.querySelector("p.sample");
+            window.alert(p.innerHTML); ////･･･････"取得対象"が表示される
+        };
+    </script>
+</head>
+
+<body>
+    <p class="sample">取得対象</p>
+    <p>取得対象外</p>
+</body>
+
+</html>

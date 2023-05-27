@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <script type="text/javascript">
+    let url = "http://foo.bar?str=";
+    let search = "字1+字2";
+    let uri1 = url + search; //･･････････････････････単純な文字列結合
+    let uriEncoded1 = encodeURI(uri1); //･････････uri全体をencodeURI()でエンコード
+
+    let uriEncoded2 = url + encodeURIComponent(search); //･･･ uriの検索文字列のみencodeURI
+    // Component()でエンコード
+    console.log(uri1); //･････････････結果：http://foo.bar?str=字1+字2
+    //※URIに非ASCIIコード文字が混入
+    console.log(uriEncoded1); //････結果：http://foo.bar?str=%E5%AD%971+%E5%AD%972
+    //※検索文字列中の`+'がエンコードされない
+    console.log(uriEncoded2); //････結果：http://foo.bar?str=%E5%AD%971%2B%E5%AD%972
+    //※'+'もエンコードされる
+    console.log(decodeURI(uriEncoded1)); //･････結果：http://foo.bar?str=字1+字2
+
+
+  </script>
+</head>
+
+<body>
+  <div id="#"></div>
+</body>

@@ -1,0 +1,21 @@
+﻿<html>
+    <body>
+        <canvas id="myCanvas" width="640" height="600"></canvas>
+    </body>
+
+<script>
+    function draw() {
+        let canvas = document.getElementById('myCanvas');
+        let context = canvas.getContext('2d');
+        context.arc(200, 200, 40, Math.PI, Math.PI * 2, true);
+        context.lineWidth = 15;
+        context.stroke();
+    }
+
+    draw();
+</script>
+
+
+
+
+</html>

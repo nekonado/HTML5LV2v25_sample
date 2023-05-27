@@ -1,0 +1,28 @@
+﻿<html>
+
+<body>
+    <input type="file" id="files" name="files[]" multiple />
+    <output id="list"></output>
+    <script>
+        // ファイルが選択された場合に呼ばれます
+        function handleFileSelect(evt) {
+            // 選択されたファイル群のFileListオブジェクト
+            let files = evt.target.files;
+            let output = [];
+            // ファイルの属性情報を取得して配列に格納します
+            for (let i = 0, f; f = files[i]; i++) {
+                output.push('<li><strong>', escape(f.name), '</strong> (', f.type ||
+                    'n/a', ') - ',
+                    f.size, ' bytes, last modified: ',
+                    f.lastModifiedDate.toLocaleDateString(), '</li>');
+            }
+            // 画面にファイルの属性情報を表示します
+            document.getElementById('list').innerHTML = '<ul>' + output.join('') +
+                '</ul>';
+        }
+        document.getElementById('files').addEventListener('change', handleFileSelect,
+            false);
+    </script>
+</body>
+
+</html>

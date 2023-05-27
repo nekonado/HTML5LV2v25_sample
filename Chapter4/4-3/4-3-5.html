@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        let buffer = new ArrayBuffer(12);
+        // バイト境界不正（2番目のパラメータbyteoffset=1により4の倍数でない）
+        let ary = new Uint32Array(buffer, 1, 2);
+        ary[0] = 0x12345678;
+        ary[1] = 0x98765432;
+        console.log(ary)
+
+    </script>
+    </body>
+
+</html>

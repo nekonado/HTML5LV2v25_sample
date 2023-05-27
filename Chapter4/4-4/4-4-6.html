@@ -1,0 +1,21 @@
+﻿<html>
+
+<head>
+  <script>
+    let process = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve();
+      }, 3000);
+    });
+
+    process.then(function () { console.log("finished") });
+
+    console.log("no wait")
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

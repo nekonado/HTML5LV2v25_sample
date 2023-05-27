@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <script type="text/javascript">
+    const a = "global";
+    console.log(a); //･･････････結果："global"
+    f1();
+    console.log(a); //･･････････結果："global"
+    console.log(z); //･･････････結果：undefined 
+    function f1() {
+      let a = "local-f1";
+      let z = "local-f1";
+      console.log(a); //･････････結果："local-f1" 
+      console.log(z); //･････････結果："local-f1" 
+      f2();
+      function f2() {
+        let a = "local-f2";
+        console.log(a); //･･･････結果："local-f2" 
+        console.log(z); //･･･････結果："local-f1" 
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <div id="#"></div>
+</body>

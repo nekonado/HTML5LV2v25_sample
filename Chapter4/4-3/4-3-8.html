@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        let blob = new Blob(["TEXT DATA"], { type: "text/plain" });
+        let blobURL = URL.createObjectURL(blob); // blobURL生成
+        console.log(blobURL); // "blob:http://foo.bar/0d63f418-4eda-486e-bf9f-55a5e4f77298"
+        // blobURLをHTTPリクエストに用いる例
+        let request = new XMLHttpRequest();
+        request.open('GET', blobURL, false);
+        request.send();
+        console.log(request.responseText); // "TEXT DATA"
+
+    </script>
+
+
+    </body>
+
+</html>

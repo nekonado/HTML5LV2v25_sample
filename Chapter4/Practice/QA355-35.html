@@ -1,0 +1,30 @@
+﻿<html>
+
+<script>
+    let notification = function (message) {
+        if ("Notification" in window) {
+            let permission = Notification.permission;
+            if (permission === "denied") {
+                return;
+            }
+            Notification
+                .requestPermission()
+                .then(function () {
+                    notification = new Notification(message);
+                });
+        }
+    }
+    notification(window.navigator.onLine);
+    window.addEventListener("online", function () {
+        notification("online");
+    }, false);
+    window.addEventListener("offline", function () {
+        notification("offline");
+    }, false);
+</script>
+
+
+
+</body>
+
+</html>

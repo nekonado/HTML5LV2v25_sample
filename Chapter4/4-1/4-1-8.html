@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+
+<body>
+    <canvas id="board" width="640" height="600"></canvas>
+</body>
+
+<script>
+    let canvas = document.getElementById('board');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    };
+
+    let img = new Image();
+    img.src = 'canvas-sample.jpg'
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0);
+    }
+</script>
+
+</html>

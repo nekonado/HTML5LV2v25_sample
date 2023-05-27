@@ -1,0 +1,21 @@
+﻿<html>
+
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="transform:scale(-1,1);"></canvas>
+
+<video id="sample" controls autoplay>
+    <source src="sample.mp4" />
+</video>
+<script>
+    let video = document.getElementById("sample");
+    video.addEventListener("pause", function () {
+        let canvasElement = document.getElementById("myCanvas");
+        let canvasContext = canvasElement.getContext("2d");
+        canvasContext.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+        }, false);
+</script>
+</body>
+
+
+
+</html>

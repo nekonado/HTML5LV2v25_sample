@@ -1,0 +1,17 @@
+﻿<html>
+
+<head>
+    <script>
+        let num = new Array(111, 222, 333);
+        console.log(num.length); //････結果：3　※要素数は3
+        num.length = 2;
+        console.log(num); //･･････････････結果：[111, 222]　※num[2]が削除される
+        num.length = 3;
+        console.log(num); //･･････････････結果：[111, 222, undefined]※値がundefinedのnum[2]が追加される
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

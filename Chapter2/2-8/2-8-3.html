@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <script type="text/javascript">
+    function closure() {
+      let a = 1;
+      return function () { //････匿名関数
+        return a++; //･･･････････ 1
+      };
+      // 変数aと匿名関数が一体となっている
+    }
+    let c = closure();
+    // c()を呼び出すごとにカウントアップ
+    console.log(c()); //････結果：1
+    console.log(c()); //････結果：2
+    console.log(c()); //････結果：3
+  </script>
+</head>
+
+<body>
+  <div id="#"></div>
+</body>
